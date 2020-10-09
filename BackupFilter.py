@@ -1,7 +1,7 @@
 import os, time, sys,calendar
 from datetime import date
 
-def last_5_days_backup_file(path,x,now):#checks if the file is from last 5 days.
+def last_5_days_backup_file(path,x,now,NumberofDays):#checks if the file is from last 5 days.
     j=os.path.getmtime(path+'/'+x)
     if j>(now-5*86400):
         del(j)
@@ -41,7 +41,7 @@ def file_removal(fsave,f,path):#Removes the files which are not present in fsave
     del(fsave)
     del(path)
     
-def filter(path,n):
+def filter(path,NumberofDays):
     
     now = time.time()
     file=os.listdir(path)
@@ -50,7 +50,7 @@ def filter(path,n):
     
     for x in file:
 
-        temp=last_5_days_backup_file(path,x,now)
+        temp=last_5_days_backup_file(path,x,now,NumberofDays)
         
         if temp!=0:
             files_saved.append(str(temp))
