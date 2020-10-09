@@ -3,7 +3,7 @@ from datetime import date
 
 def last_5_days_backup_file(path,x,now,NumberofDays):#checks if the file is from last 5 days.
     j=os.path.getmtime(path+'/'+x)
-    if j>(now-5*86400):
+    if j>(now-NumberofDays*86400):
         del(j)
         return(x)
     else:
