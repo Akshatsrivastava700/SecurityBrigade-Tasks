@@ -47,3 +47,6 @@ db_backup_2020-9-16.txt
 db_backup_2020-9-17.txt  
 
 #### Good luck!
+
+
+#Database Queries Solution is in the file database queries.
